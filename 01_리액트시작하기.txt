@@ -1,0 +1,33 @@
+React 시작하기
+
+리액트: https://ko.legacy.reactjs.org/
+학습: https://www.w3schools.com/react/react_getstarted.asp 
+
+1. Node.js 설치
+-> npx(Node Package eXecute), npm(Node Package Manager) 명령어 입력
+-> 출처: https://youngmin.hashnode.dev/npm-npx
+
+2. Node 설치 확인
+명령줄 인터페이스(CLI)는 Command-Line Interface
+    가. ctrl+` -> 터미널
+    나. 에러가 날 경우는 컴퓨터 재부팅후 확인
+
+실습>
+web0826>node -v
+결과: v20.17.0
+web0826>npx -v
+결과: 10.8.2
+web0826>npm -v
+결과: 10.8.2
+
+리액트로 App 제작 방법
+1. CDN - > HTML로 직접 반응하기
+2. cra(create-react-app) -> SPA(Single Page Appication)
+
+CDN 방식으로 제작하기
+https://ko.legacy.reactjs.org/docs/cdn-links.html
+https://www.w3schools.com/react/react_getstarted.asp
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
