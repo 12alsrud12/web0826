@@ -10,3 +10,17 @@
     } else {
         거짓일경우
     }
+
+8. 모듈
+9. 클래스 -> 객체지향 프로그래밍언어: C++, Java
+
+훅스(Hooks, 훅들)
+클래스 컴포넌트
+함수형 컴포넌트
+생성
+function Hello(){return}
+function App(){return}
+
+호출
+<App />
+<Hello />
