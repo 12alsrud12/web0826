@@ -9,7 +9,21 @@
 
 <body>
     <script>
+        /* 
+            변수
+                키워드? var, let, const
+
+                블록 범위 버전(block scoped version)? let, const
+
+                전역변수 vs 지역변수
+
+                선언 및 할당 / 재선언 및 재할당 모두가 있다.
+                var: 재선언, 재할당 모두 가능
+                let: 재선언, 재할당 모두 가능
+                    -> 단, 재선언은 범위가 달라야 한다.
+        */
         // 변수의 키워드는? var, let, const
+        // 블록 범위 버전(block scoped version)? let, const
         // 변수에는 전역변수와 지역변수가 있다.
         // 5.6을 x에 할당한다.
 
@@ -19,11 +33,13 @@
         // 호이스팅: var, 선언적 함수
         fn();
 
-        // 블록 영역
+        // 블록 범위(영역)
         {
             // 이 y는 지역변수 fn() 내부에서만 사용가능, 가급적 지역변수 사용하는게 좋다고한다.
             // 지역변수 재선언 및 재할당
-            var y = 2;
+            var x;
+            let x;
+            x = 3;
             console.log("첫 번째 함수");
         }
         function fn() {
@@ -31,6 +47,8 @@
             var y = 3;
             console.log("두 번째 함수");
         }
+
+        console.log("세 번째 출력", x);
     </script>
 </body>
 
