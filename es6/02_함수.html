@@ -130,6 +130,17 @@
         // 3. 매개변수가 2개이면 () 필요
         const var2 = (a, b) => console.log(a);
 
+        // 4. return 문을 사용하면 -> return 키워드 생략
+        const var3 = a => { a; } // -> 이건 return 하지않음
+
+        // return 키워드/키워드 생략문
+        // 기존
+        const var4 = function (a) { return a; }
+        // 화살표 함수로 1차 줄임
+        const var5 = a => { return a; }
+        // return 까지 생략 줄임
+        const var6 = a => a;
+
         // 정규식(RegExp, Regular Expression)
         // \n -> 줄바꿈
 

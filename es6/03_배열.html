@@ -8,7 +8,82 @@
 </head>
 
 <body>
+    <script>
+        /* 
+            배열(array)
+                - 여러 개의 값을 하나의 변수에 담는다.
 
+
+
+            배열 생성
+                1. 배열 리터럴
+                2. new Arrey()
+
+                const 변수 = [값1, 값2, ...,]; / <- 이 대괄호로 감싸는게 리터럴방식
+
+                const 변수 = new Array(값1, 값2, ...,);
+
+                index number
+                    -> 배열의 색인 번호
+                    -> 0번부터 1, 2, ...
+
+            배열 접근
+                변수[번호]
+        */
+
+
+        // 배열
+        const fruit1 = "사과";
+        const fruit2 = "바나나";
+        const fruit3 = "오렌지";
+
+        // 다수의 배열
+        const fruits = ["사과", "바나나", "오렌지"];
+
+        // 출력
+        document.write(fruit1 + "<br>");
+        document.write(fruit2 + "<br>");
+        document.write(fruit3 + "<br>");
+        // 구분용 br
+        document.write("<hr>");
+        document.write("<br>");
+        document.write("<hr>");
+
+        // 다수의 배열
+        document.write(fruits + "<br>");
+
+        // 다수의 배열 부분 불러오기
+
+        // 사과만 불러오기
+        document.write(fruits[0] + "<br>");
+        // 바나나만 불러오기
+        document.write(fruits[1] + "<br>");
+        // 오렌지만 불러오기
+        document.write(fruits[2] + "<br>");
+
+        // 구분용 띄어쓰기
+        document.write("<hr>");
+        document.write("<br>");
+        document.write("<hr>");
+
+        // 다수의 배열2
+        const fruits2 = new Array("apple", "banana", "orange");
+
+        // 다수의 배열
+        document.write(fruits2 + "<br>");
+
+        // 다수의 배열 부분 불러오기
+
+        // 사과만 불러오기
+        document.write(fruits2[0] + "<br>");
+        // 바나나만 불러오기
+        document.write(fruits2[1] + "<br>");
+        // 오렌지만 불러오기
+        document.write(fruits2[2] + "<br>");
+        
+        document.write("<hr>");
+
+    </script>
 </body>
 
 </html>
