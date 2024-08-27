@@ -75,7 +75,18 @@
                 parameter variable(매개 변수) -> 변수
                 argument(인수, 인자) -> 값
 
-            return 키워드
+            return 키워드 -> 반환, 블록을 벗어남 호출하면 그대로 끝이다
+                예) finction fn(a,b) {
+                    return;
+                } // 이렇게 있으면 a,b고 뭐고 그대로 끝이라고 한다.
+
+
+                그래서 이걸 이용해서 계산기도 제작할 수 있다고 한다.
+                예) finction fn(a,b) {
+                    return a + b;
+                } // 이런식으로
+
+                
 
             [화살표 함수]
                 1. 함수에 명령문이 하나뿐이고 명령문이 값을 반환하는 경우
@@ -110,13 +121,19 @@
                 console.log(a);
             }
         */
-        // {} 안에 문장이 1개이면 -> {} 생략 / 개발자는 무조건 생략
+        // 1. {} 안에 문장이 1개이면 -> {} 생략 / 개발자는 무조건 생략
         // const var2 = (a)=> console.log(a);
-        // 매개변수가 1개이면 -> () 생략
-        const var2 = a => console.log(a);
+
+        // 2. 매개변수가 1개이면 -> () 생략
+        // const var2 = a => console.log(a);
+
+        // 3. 매개변수가 2개이면 () 필요
+        const var2 = (a, b) => console.log(a);
 
         // 정규식(RegExp, Regular Expression)
         // \n -> 줄바꿈
+
+        // + 연산자는
         console.log(fn() + '\n' + var1 + '\n' + var2 + '\n');
         document.write(fn() + '<br>' + var1 + '<br>' + var2 + '<br>');
 
@@ -131,6 +148,33 @@
         fn();
         var1();
         var2();
+
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+        // 매개 변수 개수보다 적게 인수를 써도 에러는 아니다.
+        // 인수가 없는 매개 변수 값은 undefined -> 에러는 아니어도 개수를 맞춰 적용할것!
+
+        fn("1." + "나는 선언적 함수이다.");
+        var1("2." + "나는 익명 함수이다.");
+        var2("3." + "나는 화살표 함수이다.");
+        fn(1.1, 5);
+        var1(2, 5);
+
+        // 매개 변수 개수보다 더 많은 인수를 써도 에러는 아니다.
+        // 매개 변수 개수 만큼 기록된 인수 순서로 적용된다.
+        var2("3.", 5);
+
+        console.log(var2("3.", 5));
+
+        document.write(fn(1.1, 5)); // 6.1
+        document.write(var1(2, 5)); // 7
+        document.write(var2("3.", 5)); // 3.
+        const x = fn(1.1, 5); // 6.1
+        const y = var1(2, 5); // 7
+        const z = var2("3.", 5); // 3.
+
+        // 출력
+        document.write(`x는 ${x} <br> y는 ${y} <br>z는 ${z} <br>`);
     </script>
 </body>
 
