@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 변수의 키워드는? var, let, const
+        // 변수에는 전역변수와 지역변수가 있다.
+        // 5.6을 x에 할당한다.
+
+        // 여기에 있는게 전역 모든 곳에서 사용가능
+        var x = 1;
+
+        // 호이스팅: var, 선언적 함수
+        fn();
+
+        // 블록 영역
+        {
+            // 이 y는 지역변수 fn() 내부에서만 사용가능, 가급적 지역변수 사용하는게 좋다고한다.
+            // 지역변수 재선언 및 재할당
+            var y = 2;
+            console.log("첫 번째 함수");
+        }
+        function fn() {
+            // 이 y는 지역변수 fn() 내부에서만 사용가능, 가급적 지역변수 사용하는게 좋다고한다.
+            var y = 3;
+            console.log("두 번째 함수");
+        }
+    </script>
+</body>
+
+</html>
