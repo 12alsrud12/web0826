@@ -1,60 +1,168 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>03-1 배열</title>
+    <title>03-1_배열</title>
 </head>
 
 <body>
-    <script>
-        /* 
-            배열(Array) -> 내장 객체
-                const 배열 = [값1, 값2, ...,];
-
-                속성
-                    배열.lenght
-                메서드
-                    배열.valueOf() -> 배열 요소 전체 반환
-                    배열.sort() -> 오름차순 정렬, 123, 가나다,abc
-                    배열.reverse() -> 거꾸로
-
-                    배열.reverse() -> 
-                    배열.reverse() -> 
-                    배열.map()
-        */
-
-        // 배열의 값을 저장하는 공간이 5개
-        const arr1 = new Array(5);
-        console.log(arr1);
-
-        // 배열의 값이 5이며, 1개
-        const arr2 = [5]; // 주로 이 배열의 "리터럴 방식"을 사용하는게 좋다.
-        console.log(arr2);
-
-
-        // 이렇게하면 배열의 값이 2개라는 점에서 같다.
-        const arr11 = new Array(5, 10);
-        const arr22 = [5, 10];
-
-        console.log("arr11 :", arr11);
-        console.log("arr22 :", arr22);
-        // 두개 다 배열 공간은 2개로 표기되고 값은 5,10 두개로 표기된다.
-
-        /*
+    <!-- 
         title: 사랑의 하츄핑
         rate: 예매율 1.5%
         date: 개봉일 2024.08.07
         like: 490
         ticket: 예매
+    -->
+    <ul id="ui-card">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        /* 
+            배열(array) -> 내장 객체
+                const 배열 = [];
+
+                속성
+                    배열.length
+                메서드
+                    배열.valueOf() -> 배열 요소 전체 반환
+
+                    배열.sort() -> 오름차순 정렬, 123, 가나다, abc
+                    배열.reverse() -> 거꾸로
+                    배열.toSorted() -> 오름차순 정렬(복제)
+                    배열.toReversed() -> 거꾸로(복제)
+
+                    배열.map() -> 배열의 각 항목에 함수를 실행하고 결과로 새 배열을 반환
         */
 
+        // 배열의 값을 저장하는 공간이 5개
+        const arr1 = new Array(5);
+        console.log(arr1);
+        // 배열의 값이 5
+        const arr2 = [5]; // -> 배열 리터럴 방식을 사용한다.
+        console.log(arr2.valueOf());
+
+        // 배열의 값이 2개
+        const arr11 = new Array(5, 10);
+        const arr22 = [5, 10];
+        console.log(arr11, arr22);
+
         const cards = ["사랑의 하츄핑", 1.5, "2024.08.07", 490];
+
+        // 배열 참조
+        // 배열명[색인번호]
+        // 색인 번호는 0, 1, 2, ...
+        document.write("<h2>배열 참조</h2>");
         document.write(cards[0] + "<br>");
         document.write(cards[1] + "<br>");
         document.write(cards[2] + "<br>");
         document.write(cards[3] + "<br>");
+
+        document.write("<hr>");
+
+        // while: 조건이 만족하는 동안 무한반복 1초 단위가아니라 엄청 빨리 반복해서 이거 해놓고 F12로 켜보면 무한 로딩에 걸리고 잘못하면 블루스크린이 뜬다.
+        // 선 조건 true시 무한반복 초고속 동작
+        /* 
+            <초기값>
+            while: (조건) {
+                ...
+                증감값
+            }
+        */
+        document.write("<h2>whlie</h2>");
+        // while (idx < cards.length) {
+        //     document.write(cards[idx] + "<br>");
+        //     console.log("??");
+        //     idx++;
+        // };
+
+        // do ~ while: 최소 1번 실행, 조건이 만족하지 않아도 우선 한번 실행 후 그 후에 조건을 비교한다! 만족하지않으면 1번만 실행
+        /* 
+            <초기값>
+            do {
+                ...
+                증감값
+            } while (조건)
+        */
+        document.write("<h2>do ~ while</h2>");
+        let index = 0;
+
+        document.write("<h2>반복문 for</h2>");
+        // 반복문 for
+        // for(let 초기값; 조건식; 증감값) {...}
+        // i=0, 1, 2, 3, 4
+        // for (let idx = 0; i < cards.length + 1; i++) {
+        //     document.write(cards[idx] + "<br>");
+        // }
+
+        document.write("<hr>");
+
+        document.write("<h2>for ~ of</h2>");
+        // for~of
+        // for(const x of 배열또는컬렉션) {...}
+        // for (const x of cards) {
+        //     document.write(x + "<br>");
+        // }
+
+        // 반복 동작
+        // forEach(함수) 메서드
+
+
+        // 배열의 개수
+        document.write("배열의 개수는? " + cards.length + "<br>");
+
+        const uiCard = document.querySelector("#ui-card");
+
+        document.write("<h2>forEach</h2>");
+        cards.forEach((item, idx) => {
+            document.write(item + "<br>");
+        });
+
+        // map(함수) 메서드
+        /* 
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        */
+        // 문제> ul 안에 li로 넣기
+        document.write("<h2>문제</h2>");
+        document.write(`<ul>`);
+        // item의 개수만큼 map()이 반복하여 새로운 배열을 만들어준다. 
+        cards.map(function (item) {
+            const mylist = `<li>${item}</li>`
+            document.write(mylist);
+            console.log(mylist);
+        });
+        document.write(`</ul>`);
+
+        /*
+            정렬(sort)
+                오름차순: 가나다, abc, 123, ...
+                내림차순: 다나가, cba, 321, ...
+
+            sort() -> 오름차순
+            sort(), reverse() -> 내림차순
+        */
+        const sortArr = ["b", "c", "a"];
+        console.log("정렬 전:", sortArr.valueOf());
+        // 기존 배열 정렬을 오름차순 변경
+        // console.log("오름차순 :", sortArr.sort());
+        // console.log("내림차순/(위에 것 리버스처리):", sortArr.reverse());
+        // 기존 배열을 복제하여 오름차순으로 정렬된 새로운 배열을 만든다.
+        console.log("오름차순:", sortArr.toSorted());
+
+        // 오름차순 정렬한걸 변수로 저장
+        const sortArrAfter = sortArr.toSorted;
+        // 저장한 변수를 리버스(뒤집기) 해서 정렬한걸 뒤집기.
+        console.log("내림차순:", sortArrAfter.toReversed());
+        console.log("정렬 후:", sortArrAfter.valueOf());
     </script>
 </body>
 
