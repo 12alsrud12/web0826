@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,19 +11,22 @@
     <script>
         /* 
             생성자 함수
-                1. 이름의 첫글자는 대문자로 쓴다. -> 일반 함수와 구별
+                1. 이름의 첫글자는 대문자로 쓴다. 
+                    -> 일반 함수와 구별
+                2. this 키워드로 속성을 지정한다.
         */
-        function mb(mbimg, mbrank, mbtit, mbrate, mbdate, mbheart) {
+        function Mb(mbimg, mbrank, mbtit, mbrate, mbdate, mbheart) {
             this.이미지 = mbimg,
-            this.관람등급 = mbrank,
-            this.제목 = mbtit,
-            this.예매율 = mbrate,
-            this.개봉일 = mbdate,
-            this.하트 = mbheart,
-            this.설명 = function () {
-                    alert(`당신이 선택한 영화는 ${this.제목}입니다.`);
-                };
-        };
+                this.관람등급 = mbrank,
+                this.제목 = mbtit,
+                this.예매율 = mbrate,
+                this.개봉일 = mbdate,
+                this.좋아요 = mbheart,
+
+                this.choice = function () {
+                    document.write(`당신이 선택한 영화는 ${this.제목}입니다.`);
+                }
+        }
     </script>
 </body>
 
