@@ -10,10 +10,17 @@
 <body>
     <script>
         /* 
-            생성자 함수
+            생성자(constructor)란?
+                객체를 생성하는 함수!
+
                 1. 이름의 첫글자는 대문자로 쓴다. 
                     -> 일반 함수와 구별
                 2. this 키워드로 속성을 지정한다.
+            
+            객체 생성 방법
+                1. 객체 리터럴
+                2. new 생성자 / new Object();
+                3. 생성자를 통해 객체를 직접 생성
         */
         function Mb(mbimg, mbrank, mbtit, mbrate, mbdate, mbheart) {
             this.이미지 = mbimg,
@@ -25,8 +32,8 @@
 
                 this.choice = function () {
                     document.write(`당신이 선택한 영화는 ${this.제목}입니다.`);
-                }
-        }
+                };
+        };
     </script>
 </body>
 
