@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,30 +10,66 @@
 <body>
     <script>
         /*
+            생성자(constructor)
+                1. 함수
+                2. 속성과 메서드를 직접 기록
+                3. 생성자명의 첫 글자는 대문자
+
+                function 함수명(변수) {
+                    this.속성 = 변수;
+                }
+
             클래스(class)
                 1. 함수의 한 유형이다.
-                2. 속성은 constructor()메서드 내부에 할당
+                2. 속성은 constructor() 메서드 내부에 할당
                 3. 클래스명의 첫 글자는 대문자
 
-            class 클래스명 {
-                constructor(변수) {
-                    this.속성 = 변수;
-                };
-            };
-
-            class Car {
-                constructor(name) {
-                  this.brand = name;
+            -> 아래는 클래스 예제 근데 이거 쓸바엔 대부분 위 생성자 씀
+                + 클래스 전용으로 할 수 있는 기능이 있는것도 아니기에 훨씬 더 짧고 쉬운 생성자를 주로 사용한다.
+                
+                class 클래스명 {
+                    constructor(변수) {
+                        this.속성 = 변수;
+                    }
+                    메서드() {
+                        return ...;
+                    }
                 }
+        */
 
-                present() {
-                  return 'I have a ' + this.brand;
-                }
+        class Mb {
+            // constructor() -> 속성 정의
+            constructor(mbimg, mbrank, mbtit, mbrate, mbdate, mbheart) {
+                this.이미지 = mbimg;
+                this.관람등급 = mbrank;
+                this.제목 = mbtit;
+                this.예매율 = mbrate;
+                this.개봉일 = mbdate;
+                this.좋아요 = mbheart;
             }
 
-            const mycar = new Car("Ford");
-            mycar.present();
-        */
+            choice() {
+                return document.write(`당신이 선택한 영화는 ${this.제목}입니다.`);
+            }
+        }
+
+        const mb = new Mb("https://img.megabox.co.kr/SharedImg/2024/08/01/BUsWispT4T7lkUapLBCGyK17FuX5kKk6_420.jpg", "12", "파일럿", "4.1%", "2024.07.31", "1.5k");
+
+        // 콘솔 출력
+        console.log("객체 생성 결과: ", mb);
+
+        // 화면 출력
+        // for ~ in
+        // x는 속성, 값은 객체.속성 또는 객체["속성"]
+
+        document.write("<ul>");
+        for (const x in mb) {
+            // x가 이미지와 같으면 통과
+            if (x === "이미지" || x === "choice") continue;
+            document.write(`<li>${x} : ${mb[x]}</li>`);
+        }
+        mb.choice();
+        document.write("</ul>");
     </script>
 </body>
 
