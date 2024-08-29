@@ -11,6 +11,9 @@
     <script>
         /*
             구조 분해 -> 샌드위치 만들때 샌드위치 재료만 빼는법이라고 생각하기!
+
+            구조 분해란?
+                - 언제: 함수가 배열을 반환하는 경우에 사용!
         */
         //  변수 내부에 탈 것이 3개가 있다.
         const vehicles = ['mustang', 'f-150', 'expedition'];
@@ -26,6 +29,60 @@
         // 변수를 배열로
         const [car2, truck2, suv2] = vehicles;
         const [car3, , suv3] = vehicles;
+
+        // 구조 분해 -> 변수를 배열로
+
+        // 계산기
+        // 함수가 배열을 반환하는 경우 구조 분해가 유용합니다.
+        function calculate(a, b) {
+            const add = a + b;
+            const subtract = a - b;
+            const multiply = a * b;
+            const divide = a / b;
+
+            return [add, subtract, multiply, divide];
+        }
+
+        // 위 구조분해의 결과값은 아래이다.
+        const [add, subtract, multiply, divide] = calculate(4, 7);
+
+
+        // 구조 분해
+        const vehicleOne = {
+            brand: 'Ford',
+            model: 'Mustang',
+            type: 'car',
+            year: 2021,
+            color: 'red'
+        }
+
+        myVehicle(vehicleOne);
+
+        // old way
+        function myVehicle(vehicle) {
+            const message = 'My ' + vehicle.type + ' is a ' + vehicle.color + ' ' + vehicle.brand + ' ' + vehicle.model + '.';
+        }
+
+        // 구조 분해
+        // 객체 안의 객체를 구조 분해
+        const vehicleTwo = {
+            brand: 'Ford',
+            model: 'Mustang',
+            type: 'car',
+            year: 2021,
+            color: 'red',
+            registration: {
+                city: 'Houston',
+                state: 'Texas',
+                country: 'USA'
+            }
+        }
+
+        myVehicle(vehicleTwo)
+
+        function myVehicle({ model, registration: { state } }) {
+            const message = 'My ' + model + ' is registered in ' + state + '.';
+        }
     </script>
 </body>
 
