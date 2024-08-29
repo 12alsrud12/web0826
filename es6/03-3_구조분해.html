@@ -10,9 +10,22 @@
 <body>
     <script>
         /*
-            구조 분해
-            
+            구조 분해 -> 샌드위치 만들때 샌드위치 재료만 빼는법이라고 생각하기!
         */
+        //  변수 내부에 탈 것이 3개가 있다.
+        const vehicles = ['mustang', 'f-150', 'expedition'];
+
+        // old way(이전/구버전 방법) -> 구조분해가 나오기 이전의 방법
+        // 자동차(car)이름: mustang
+        const car = vehicles[0];
+        // 트럭(truck)이름: f-150
+        const truck = vehicles[1];
+        // 자동차 종류중 suv의 이름: expedition
+        const suv = vehicles[2];
+
+        // 변수를 배열로
+        const [car2, truck2, suv2] = vehicles;
+        const [car3, , suv3] = vehicles;
     </script>
 </body>
 
