@@ -5,6 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>객체</title>
+    <style>
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 2;
+        }
+
+        img {
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -72,21 +91,86 @@
         // 추가 후 등번호8 출력
         document.write(`${person1[0]}의 등번호는 ${person1["등번호"]}이다.`);
         document.write("<br>");
+        document.write("<br>");
 
-        const megaCard = {
-            "이미지": "https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg",
+        // UI card용 오브젝트(객체)
+        // new 키워드로 생성자 함수로 만든 오브젝트(객체)
+        const megaCard = new Object({
+            "영화 이미지": '<img src="https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg" alt="사랑의 하츄핑">',
             "영화 제목": "사랑의 하츄핑",
-            "예매율": 2.6,
-            "개봉일": "개봉일 2024.08.07",
+            "예매율": "2.6%",
+            "개봉일": "2024.08.07",
             "좋아요!": 495,
-        };
+        });
 
         console.log(megaCard);
 
         // x는 배열의 아이템이자 속성명이다.
+        document.write(`<ul>`);
         for (x in megaCard) {
-            document.write(x + ": " + megaCard.x + "<br>");
+            document.write(`<li>${x}: ${megaCard[x]}</li>`);
         };
+        document.write(`</ul>`);
+
+
+        // UI card용 오브젝트(객체)
+        // new 키워드로 생성자 함수로 만든 오브젝트(객체)
+        const megaCard2 = new Object({
+            "영화 이미지": '<img src="https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg" alt="사랑의 하츄핑">',
+            "영화 제목": "사랑의 하츄핑",
+            "예매율": "2.6%",
+            "개봉일": "2024.08.07",
+            "좋아요!": 495,
+        });
+
+        console.log(megaCard2);
+
+        // x는 배열의 아이템이자 속성명이다.
+        document.write(`<ul>`);
+        for (x in megaCard2) {
+            document.write(`<li>${x}: ${megaCard2[x]}</li>`);
+        };
+        document.write(`</ul>`);
+
+
+        // UI card용 오브젝트(객체)
+        // new 키워드로 생성자 함수로 만든 오브젝트(객체)
+        const megaCard3 = new Object({
+            "영화 이미지": '<img src="https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg" alt="사랑의 하츄핑">',
+            "영화 제목": "사랑의 하츄핑",
+            "예매율": "2.6%",
+            "개봉일": "2024.08.07",
+            "좋아요!": 495,
+        });
+
+        console.log(megaCard3);
+
+        // x는 배열의 아이템이자 속성명이다.
+        document.write(`<ul>`);
+        for (x in megaCard3) {
+            document.write(`<li>${x}: ${megaCard3[x]}</li>`);
+        };
+        document.write(`</ul>`);
+
+
+        // UI card용 오브젝트(객체)
+        // new 키워드로 생성자 함수로 만든 오브젝트(객체)
+        const megaCard4 = new Object({
+            "영화 이미지": '<img src="https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg" alt="사랑의 하츄핑">',
+            "영화 제목": "사랑의 하츄핑",
+            "예매율": "2.6%",
+            "개봉일": "2024.08.07",
+            "좋아요!": 495,
+        });
+
+        console.log(megaCard4);
+
+        // x는 배열의 아이템이자 속성명이다.
+        document.write(`<ul>`);
+        for (x in megaCard4) {
+            document.write(`<li>${x}: ${megaCard4[x]}</li>`);
+        };
+        document.write(`</ul>`);
 
         // 이 두개를 console.log로 출력하면 두개다 빈 Object으로 출력된다.
 
