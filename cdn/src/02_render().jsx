@@ -60,6 +60,28 @@ function Hello() {
 //   );
 // }
 
+// 컴포넌트 생성
+// 한 줄 인 경우
+function Haaa() {
+    // 리턴 뒤에 한 줄 문장
+    return <h2>Hello World!</h2>
+}
+
+// 두 줄 이상인 경우
+function Haaa2() {
+    return (
+        /* div 이 안부터 리엑트 부분 */
+        <div className="ui-card">
+            <div className="card-img">
+                <img src="" alt="" />
+            </div>
+        </div>
+    )
+}
+// 라이브러리 이름: React, ReactDOM(가상돔), Babel(JSX번역)
+
+// 리액트의 출력
+// 객체.메서드
 /* 
     ReactDOM.render(요소, 컨테이너); 
       1. ReactDOM은 가상 DOM을 생성하는 객체
