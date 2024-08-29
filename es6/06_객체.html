@@ -72,8 +72,21 @@
         // 추가 후 등번호8 출력
         document.write(`${person1[0]}의 등번호는 ${person1["등번호"]}이다.`);
         document.write("<br>");
-        
-        const person2 = new Object();
+
+        const megaCard1 = {
+            "이미지": "https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg",
+            "영화 제목": "사랑의 하츄핑",
+            "예매율": 2.6,
+            "개봉일": "개봉일 2024.08.07",
+            "좋아요!": 495,
+        };
+
+        console.log(megaCard1);
+
+        // x는 배열의 아이템이자 속성명이다.
+        for (x of megaCard1) {
+            document.write(x);
+        };
 
         // 이 두개를 console.log로 출력하면 두개다 빈 Object으로 출력된다.
 
