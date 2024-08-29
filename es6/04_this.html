@@ -25,6 +25,20 @@
                 일반 함수 - return, this 선택
                 생성자 함수 - new, this 키워드가 필수! / return을 쓸수도 있지만 this가 대체하여 사용 X!
         */
+
+        function fn1() {
+            console.log("선언적함수", this, event.currentTarget);
+        };
+
+        const fn2 = function () {
+            console.log("익명함수", this, event.currentTarget);
+        };
+
+        const fn3 = () => {
+            console.log("익명함수", this, event.currentTarget);
+        };
+
+        fn1()
     </script>
 </body>
 
