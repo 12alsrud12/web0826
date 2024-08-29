@@ -19,7 +19,7 @@
 
             일반함수는 this, currentTarget이 같다.
                 - this, event.currentTarget은 이벤트를 발생한 자신
-                
+
             화살표함수의 경우
                 - this는 window
                 - event.currentTarget은 이벤트를 발생한 자신
@@ -45,7 +45,9 @@
             console.log("익명함수", this, event.currentTarget);
         };
 
-        fn1()
+        fn1();
+        fn2();
+        fn3();
     </script>
 </body>
 
