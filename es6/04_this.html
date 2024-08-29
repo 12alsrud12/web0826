@@ -1,53 +1,73 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>04_this</title>
+    <title>함수와 this</title>
 </head>
 
 <body>
+    <button>red</button>
+    <button>green</button>
+    <button>blue</button>
+
     <script>
-        /*
-            함수와 this
-            이벤트가 없는 경우: this는 window
+        /* 
+            함수 호출 시
+                this는 window
 
             이벤트 발생시
-            this vs currentTerget
-            일반함수 vs 화살표함수
-
-            일반함수는 this, currentTarget이 같다.
-                - this, event.currentTarget은 이벤트를 발생한 자신
-
-            화살표함수의 경우
-                - this는 window
-                - event.currentTarget은 이벤트를 발생한 자신
-
-            ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-            this는 생성자 함수를 쓸 때 사용한다.
-            그러면 생성자 함수란?
-
-            일반함수 vs 생성자함수
-                일반 함수 - return, this 선택
-                생성자 함수 - new, this 키워드가 필수! / return을 쓸수도 있지만 this가 대체하여 사용 X!
+                this: 
+                    - 일반 함수일 경우 window, 
+                    - 화살표 함수의 경우 이벤트를 발생한 자신
+                event.currentTarget
+                    - 일반 함수, 화살표 함수 모두 이벤트를 발생한 자신
         */
 
-        function fn1() {
-            console.log("선언적함수", this, event.currentTarget);
-        };
+        /* 
+            문제> 버튼을 클릭하면 
+            버튼에 쓰인 이름의 색으로 
+            배경색 지정하기            
+        */
 
-        const fn2 = function () {
-            console.log("익명함수", this, event.currentTarget);
-        };
+        const btn = document.querySelectorAll("button");
 
-        const fn3 = () => {
-            console.log("익명함수", this, event.currentTarget);
-        };
+        // 매개변수가 없을 경우 두 문장은 같은 문장이다.
+        // 매개변수(인수)가 있을 경우
+        //btn[0].onclick = function(){fn()};
+        // 매개변수(인수)가 없을 경우
 
-        fn1();
-        fn2();
-        fn3();
+        // 버튼 클릭하면
+        btn[0].onclick = fn;
+
+        function fn() {
+            // 버튼에 쓰인 이름의 색으로 가져오기
+            const text = btn[0].innerText;
+            // 배경색 body에 지정하기
+            document.body.style.backgroundColor = text;
+
+            console.log("선언적함수 this", this);
+            console.log("선언적함수 event.currentTarget", event.currentTarget);
+        }
+
+        btn[1].onclick = function () {
+            // 버튼에 쓰인 이름의 색으로 가져오기
+            const text = btn[1].innerText;
+            // 배경색 body에 지정하기
+            document.body.style.backgroundColor = text;
+            console.log("익명함수 this", this);
+            console.log("익명함수 event.currentTarget", event.currentTarget);
+        }
+        btn[2].onclick = () => {
+            // 버튼에 쓰인 이름의 색으로 가져오기
+            const text = btn[2].innerText;
+            // 배경색 body에 지정하기
+            document.body.style.backgroundColor = text;
+            console.log("화살표함수 this", this);
+            console.log("화살표함수 event.currentTarget", event.currentTarget);
+        }
+
     </script>
 </body>
 
