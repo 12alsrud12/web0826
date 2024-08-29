@@ -10,14 +10,21 @@
 <body>
     <script>
         /*
+            함수와 this
+            이벤트가 없는 경우: this는 window
+
+            이벤트 발생시
             this vs currentTerget
             일반함수 vs 화살표함수
 
             일반함수는 this, currentTarget이 같다.
+                - this, event.currentTarget은 이벤트를 발생한 자신
+                
             화살표함수의 경우
-                this는 window
-                currentTarget은 이벤트를 발생한 자신
+                - this는 window
+                - event.currentTarget은 이벤트를 발생한 자신
 
+            ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
             this는 생성자 함수를 쓸 때 사용한다.
             그러면 생성자 함수란?
 
