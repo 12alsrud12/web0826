@@ -16,21 +16,26 @@
                 - 언제: 함수가 배열을 반환하는 경우에 사용!
         */
         //  변수 내부에 탈 것이 3개가 있다.
-        const vehicles = ['mustang', 'f-150', 'expedition'];
+        const vehicles = ['제네시스', '트럭', '싼타페'];
 
-        // old way(이전/구버전 방법) -> 구조분해가 나오기 이전의 방법
-        // 자동차(car)이름: mustang
-        const car = vehicles[0];
-        // 트럭(truck)이름: f-150
-        const truck = vehicles[1];
-        // 자동차 종류중 suv의 이름: expedition
-        const suv = vehicles[2];
-
-        // 변수를 배열로
-        const [car2, truck2, suv2] = vehicles;
-        const [car3, , suv3] = vehicles;
+        // 첫 번째 방법
+        const car1 = vehicles[0];
+        const truck1 = vehicles[1];
+        const suv1 = vehicles[2];
+        console.log("car1 :", car1);
+        console.log("car2 :", truck1);
+        console.log("car3 :", suv1);
 
         // 구조 분해 -> 변수를 배열로
+        const [car2, truck2, suv2] = vehicles;
+        const [car3, , suv3] = vehicles;
+        document.write("car2: ", car2, "<br>");
+        document.write("truck2: ", truck2, "<br>");
+        document.write("suv2: ", suv2, "<br>");
+
+        document.write("car3: ", car3, "<br>");
+        //document.write("truck3: ", truck3, "<br>"); -> 오류
+        document.write("suv3: ", suv3, "<br>");
 
         // 계산기
         // 함수가 배열을 반환하는 경우 구조 분해가 유용합니다.
@@ -43,11 +48,12 @@
             return [add, subtract, multiply, divide];
         }
 
-        // 위 구조분해의 결과값은 아래이다.
         const [add, subtract, multiply, divide] = calculate(4, 7);
+        // const [add, subtract, multiply, divide] = [13, -3, 28, ?];
 
 
-        // 구조 분해
+        // 구조 분해 -> 매개 변수를 객체로
+        // 객체 리터럴 방식으로 객체를 선언하기
         const vehicleOne = {
             brand: 'Ford',
             model: 'Mustang',
@@ -56,15 +62,32 @@
             color: 'red'
         }
 
-        myVehicle(vehicleOne);
+        // 함수 호출 값을 객체로 지정
+        const text = myVehicle1(vehicleOne);
 
-        // old way
-        function myVehicle(vehicle) {
+        // 일반적인 방법
+        // 객체 이름을 전달 받아서 객체.속성명으로 지정한다.
+        function myVehicle1(vehicle) {
+            console.log("나 호출했니?");
             const message = 'My ' + vehicle.type + ' is a ' + vehicle.color + ' ' + vehicle.brand + ' ' + vehicle.model + '.';
+
+            return message;
         }
 
+        document.write("일반적 방법: ", text);
+
         // 구조 분해
-        // 객체 안의 객체를 구조 분해
+        // 객체의 속성명을 객체 리터럴로 전달 받아서 속성명으로 지정한다.
+        myVehicle2(vehicleOne);
+
+        function myVehicle2({ type, color, brand, model }) {
+            const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+
+            document.write("<br>구조 분해: ", message);
+        }
+
+
+        // 중첩 구문: 객체안의 객체를 구조 분해
         const vehicleTwo = {
             brand: 'Ford',
             model: 'Mustang',
@@ -78,11 +101,14 @@
             }
         }
 
-        myVehicle(vehicleTwo)
+        myVehicle3(vehicleTwo)
 
-        function myVehicle({ model, registration: { state } }) {
+        function myVehicle3({ model, registration: { state } }) {
             const message = 'My ' + model + ' is registered in ' + state + '.';
+
+            document.write("<br>구조 분해: ", message);
         }
+
     </script>
 </body>
 
