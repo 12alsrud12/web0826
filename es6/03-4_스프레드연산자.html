@@ -60,6 +60,33 @@
         // 그리고 위에 스프레드 연산자 + 구조분해로 분리한 값 중 스프레드 연산자만을 변수로 저장할때에는
         const num = [...rest];
         // 이렇게 [] ... 인식이 안되기 때문에 괄호로 감싸야 한다.
+
+        // 세번째 예제 -> 객체에 적용
+        const myVehicle = {
+            brand: 'Ford',
+            model: 'Mustang',
+            color: 'red'
+        };
+
+        // update(갱신)
+        const updateMyVehicle = {
+            type: 'car',
+            year: 2021,
+            // 위와 비교하면 업데이트되어 새로 변경 및 갱신된 부분은 color
+            color: 'yellow'
+            // color: red -> yellow
+        };
+
+        // 스프레드 연산 결과는 두 객체를 하나의 객체로 병합
+        // 이때 객체의 속성이 같으면 뒤에 기록한 배열로 저장된다
+        // 예) 객체의 속성 = color, color속성의 값 red , 이후 red를 color: 'yellow' 으로 변경하여 red -> yellow 가 된다.
+        const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
+
+        console.log("자동차 스펙 갱신(new!): ", myUpdatedVehicle);
+        /*
+            위 객체에 스프레드 연산자 갱신한 값
+            자동차 스펙 갱신(new!):  {brand: 'Ford', model: 'Mustang', color: 'yellow', type: 'car', year: 2021}
+        */
     </script>
 </body>
 
