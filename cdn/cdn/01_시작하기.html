@@ -19,15 +19,6 @@
     <!-- type="text/babel" -> JSX코드 인식 -->
     <!-- 확장자는 .jsx 또는 .js -->
     <script src="./src/01_시작하기.jsx" type="text/babel"></script>
-    <script type="text/babel">
-        const heartBtn = document.querySelectorAll("button");
-        for(const x of heartBtn){
-            x.innerText = 0;
-            x.onclick = ()=>{
-                x.innerText = parseInt(x.innerText) + 1;
-            };
-        }
-    </script>
 </head>
 
 <body>
