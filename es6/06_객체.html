@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+
+<body>
+    <script>
+        /*
+            데이터 유형
+                1. 원시 데이터
+                    - number
+                    - string: "" 또는 ''
+                    - boolean: true, false
+                2. 복합(참조) 데이터
+                    - 함수: function(){}
+                    - 객체: {}, []
+            
+            생성자함수
+
+            객체 생성
+                1. 리터럴
+
+                    const 객체이름 = {}
+                2. new 생성자 함수
+            
+            객체 접근
+                객체.속성
+                객체["속성"]
+        */
+
+        // 내장 객체: Date, Array, Object, Math, String, ...
+
+        // 인스턴스(객체) 생성
+        const person = [
+            "요기 베라",
+            "https://i.namu.wiki/i/dpYOYYdqiFPG3XiZcfl6EwsXXX_R9FIhls8m2ZryeGBzkWzDGM9kH9t7RMrNpb80iQaNjgMVaUu_Auoz77Et-G7Xlll0c_csYg2BNhei1NzeUBS-pTcYlcQ-D5YPoJKYOH5F7w_nYoeZSmESNApasw.webp",
+            "1925년 5월 12일",
+            "포수",
+            "It ain't over till it's over(끝날때까지는 끝난 게 아니다)."
+        ];
+
+        // 배열의 참조는 배열[색인번호]로 한다.
+        // 빽틱, 보간법 -> ` ${표현식} `
+        document.write(`${person[0]}가 한 명언 중 최고의 명언은 ${person[4]}이다.`);
+        document.write("<br>");
+
+        // 오브젝트 추가
+        person[5] = 8;
+        // 추가 후 등번호8 출력
+        document.write(`${person[0]}의 등번호는 ${person[5]}이다.`);
+
+        document.write("<br>");
+
+        // 2번 오브젝트 방식
+        const person1 = {
+            "이름": "요기 베라",
+            "사진": "https://i.namu.wiki/i/dpYOYYdqiFPG3XiZcfl6EwsXXX_R9FIhls8m2ZryeGBzkWzDGM9kH9t7RMrNpb80iQaNjgMVaUu_Auoz77Et-G7Xlll0c_csYg2BNhei1NzeUBS-pTcYlcQ-D5YPoJKYOH5F7w_nYoeZSmESNApasw.webp",
+            "생일": "1925년 5월 12일",
+            "직업": "포수",
+            "명언": "It ain't over till it's over(끝날때까지는 끝난 게 아니다)."
+        };
+
+        document.write(`${person1["이름"]}가 한 명언 중 최고의 명언은 ${person1["명언"]}이다.`);
+        document.write("<br>");
+
+        // 오브젝트 추가
+        person1.등번호 = 8;
+        // 추가 후 등번호8 출력
+        document.write(`${person1[0]}의 등번호는 ${person1["등번호"]}이다.`);
+        document.write("<br>");
+        
+        const person2 = new Object();
+
+        // 이 두개를 console.log로 출력하면 두개다 빈 Object으로 출력된다.
+
+    </script>
+</body>
+
+</html>
