@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-4_스프레드연산자</title>
+</head>
+
+<body>
+    <script>
+        /*
+            스프레드 연산자란?
+                기존 배열이나 객체의 전체 또는 일부를
+                다른 배열이나 객체로 빠르게 복사할 수 있다.
+
+            스프레드 연산자의 기호
+                - ...
+                  기호가 ... 점 3개이다.
+            
+            ※ 스프레드 연산자는 종종 구조 분해와 함께 사용된다.
+        */
+        //  첫번째 예제 -> 스프레드 연산자 "만" 사용하는 경우
+        const numbersOne = [1, 2, 3];
+        const numbersTwo = [4, 5, 6];
+
+        // 위 예제에 스프레드 연산자를 적용하지 않은 것 ↓
+        const numbersCombined1 = [numbersOne, numbersTwo];
+        // 위 예제에 스프레드 연산자를 적용한 것 ↓
+        const numbersCombined2 = [...numbersOne, ...numbersTwo];
+
+        // 스프레드 연산자 확인
+        // 1번은 One와 Two두개가 Array 유형으로 표기된다. -> 결과값 Array(3), Array(3)
+        console.log("스프레드 연산자 적용 전: ", numbersCombined1);
+
+        // 2번은 위의 One와 Two가 합산된 상태로 표기된다. -> 결과값 (6) [1, 2, 3, 4, 5, 6] 
+        console.log("스프레드 연산자 적용 후: ", numbersCombined2);
+
+        // 두번째 예제 -> 구조 분해와 "함께" 사용되는 경우
+        const numbers = [1, 2, 3, 4, 5, 6];
+        // 위의 배열에서 아래에다 구조분해 한 것, 그리고 그 값에 스프레드 연산자도 사용한다.
+        const [one, two, ...rest] = numbers;
+        /*
+            one = 1
+            two = 2
+            그리고 ...rest 으로 인하여 나머지 3 4 5 6 이렇게 따로 분리가 되어있다.
+            아래에서 콘솔로 분리가 되었는지 확인
+        */
+        // 스프레드연산자 + 구조분해가 잘되었는지 확인용 그리고 \n은 줄바꿈이다.
+        console.log("\n one: ", one);
+        console.log("\n two: ", two);
+        console.log("\n ...rest: ", ...rest);
+        /*
+            console 확인값
+            one:  1
+            two:  2
+            ...rest:  3 4 5 6
+        */
+
+        // 그리고 위에 스프레드 연산자 + 구조분해로 분리한 값 중 스프레드 연산자만을 변수로 저장할때에는
+        const num = [...rest];
+        // 이렇게 [] ... 인식이 안되기 때문에 괄호로 감싸야 한다.
+    </script>
+</body>
+
+</html>
