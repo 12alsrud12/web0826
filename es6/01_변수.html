@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01_React_변수</title>
+    <title>변수</title>
 </head>
 
 <body>
@@ -12,50 +12,64 @@
         /* 
             변수
                 키워드? var, let, const
+           
+            블록 범위 버전(block scoped version)? let, const 
+            전역변수 vs 지역변수
+            재선언, 재할당
 
-                블록 범위 버전(block scoped version)? let, const
+            var: 
+                재선언, 재할당 모두 가능
+            let: 
+                재선언, 재할당 모두 가능 
+                단, 재선언은 범위가 달라야 한다.
+            const: 
+                선언 즉시 할당하여야 한다.  
+                단, 재선언은 범위가 달라야 한다.
+                재할당 할 수 없다.
 
-                전역변수 vs 지역변수
-
-                선언 및 할당 / 재선언 및 재할당 모두가 있다.
-                var: 재선언, 재할당 모두 가능
-                let: 재선언, 재할당 모두 가능
-                    -> 단, 재선언은 범위가 달라야 한다.
-                    -> 재할당은 모두 가능하다.
-                const: 선언 즉시 할당하여야 한다. const w 하면 에러나고, const w = 2; 이렇게 할당까지 해야한다.
-                    -> 기본적으로 재선언은 안되지만 범위가 다르면 가능하다. / 블록범위 내 혹은 밖
-                    -> 재할당은 절대 X
-
-                    객체나 배열은 const로 주로 선언한다.
-                    그런데 객체나 배열은 계속 변화하는대 이유는 다음에 설명해주신다고 하신다.
+                객체나 배열을 const 주로 선언한다.
         */
         // 변수의 키워드는? var, let, const
         // 블록 범위 버전(block scoped version)? let, const
         // 변수에는 전역변수와 지역변수가 있다.
-        // 5.6을 x에 할당한다.
+        // 재선언 및 재할당
 
-        // 여기에 있는게 전역 모든 곳에서 사용가능
-        var x = 1;
+        // 전역변수
+        // var x
+        // x = 1;
+        let x;
+        x = 1;
+        const y = 1;
 
-        // 호이스팅: var, 선언적 함수
-        fn();
+        let z;
+        z = 10;
+        z = 100;
+        //const w; -> 선언만 하면 안된다. 오류 -> 선언 즉시 할당
+        const w = 20;
+        // w = 200; -> 재할당 오류
 
-        // 블록 범위(영역)
+        console.log("블록out x: " + x + " 블록out y: " + y);
+
+        // 블록 범위
         {
-            // 이 y는 지역변수 fn() 내부에서만 사용가능, 가급적 지역변수 사용하는게 좋다고한다.
-            // 지역변수 재선언 및 재할당
-            var x;
-            let x;
-            x = 3;
-            console.log("첫 번째 함수");
-        }
-        function fn() {
-            // 이 y는 지역변수 fn() 내부에서만 사용가능, 가급적 지역변수 사용하는게 좋다고한다.
-            var y = 3;
-            console.log("두 번째 함수");
+            // 지역변수, 재선언 및 재할당
+            // var x;
+            // let x;
+            let x = 3;
+            const y = 2;
+            // x = 1;
+            // x = 2;
+            // y = 2;
+
+            let s = 100;
+            const ss = 200;
+            console.log("블록in x: " + x + " 블록in y: " + y);
+            console.log("블록in z: " + z + " 블록in w: " + w);
         }
 
-        console.log("세 번째 출력", x);
+        console.log("블록out2 x: " + x + " 블록out2 y: " + y);
+        // console.log("블록out2 s: " + s + " 블록out2 ss: " + ss); -> 에러(버그) -> 디버깅
+
     </script>
 </body>
 
