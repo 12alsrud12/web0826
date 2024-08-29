@@ -23,6 +23,13 @@
     <!-- 3. JSX 코드를 브라우저가 이해할 수 있는 형태로 변환한다. -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <!-- 위 라이브러리 1 2 3 그 아래에! 사용자 script를 넣어야 한다! -->
+    <!-- 
+        type="text/babel" -> JSX코드 인식
+
+        bable는 그냥 넣으면 인식이 안되기에 <-중요! 
+        type에 text/babel을 적는것!
+    -->
     <!-- 사용자 script -->
     <script>
         // CDN방식은 head에 script를 작성할때 body요소(html전체)를 불러오는 loaded 이벤트가 필요가 없다! (loaded 이벤트를 해주는 플러그인도 같이 불러오기 때문에)
