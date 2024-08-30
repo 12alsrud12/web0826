@@ -77,7 +77,10 @@ root0.render(myFunction());
 // 리액트의 함수형 컴포넌트
 function MyFunction() {
   // 내부 스타일 -> 객체로 CSS 스타일을 변수로 선언 후 만들어서 적용하기.
-  const styleObj = { width: "100px", border: "1px solid lemon" };
+  const styleObj = {
+    width: "100px",
+    border: "1px solid orange"
+  };
   return (
     // 요기는 JS네 하하!
     <React.Fragment>
@@ -100,7 +103,12 @@ function MyFunction() {
               2. 빈 요소는 />로 닫는다. 
             */}
       <img
-        style={styleObj.width}
+        style={{
+          borderRadius: "5px",
+          width: styleObj.width,
+          border: styleObj.border
+        }}
+
         src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png"
         alt="리액트 로고"
       />
