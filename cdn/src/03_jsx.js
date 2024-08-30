@@ -7,8 +7,9 @@
       JSX를 사용하면 React에서 HTML을 작성할 수 있습니다.
 
       1. {표현식}
-        - 표현식이란? 변수, 속성, JS표현식(연산 등)
-        (1) 인라인 스타일
+        - 표현식이란? 변수, 속성, JS표현식(연산 등))
+        (1) {// 주석}
+        (2) 인라인 스타일
             style={JS의객체}
             style={{속성: 값, 속성:값, ...}}
 
@@ -99,16 +100,24 @@ function MyFunction() {
                     예) border-radius: "5px" -> 에러
                     예) "border-radius": "5px"
                     예) borderRadius: "5px" -> 카멜 표기법
+                    만약에 속성명 객체로 다 묶으면 style={변수명} 이렇게 하나만 하면 다 적용된다.
+                    만약 인라인, 내부 둘 다 사용시에는
+                    style={{
+                      // 바로 아래 카멜표기법 한게 인라인 CSS
+                      borderRadius: "5px",
+                      // 이 아래 둘은 위 객체에서 스타일 제작해둔 객체 (Object)
+                      width: styleObj.width,
+                      border: styleObj.border
+                    }}
 
-              2. 빈 요소는 />로 닫는다. 
+                    실무에서는 style={변수명} 이렇게 하는게 맞다.
+
+              2. 빈 요소는 />로 닫는다.
             */}
       <img
-        style={{
-          borderRadius: "5px",
-          width: styleObj.width,
-          border: styleObj.border
-        }}
-
+        style={
+          styleObj
+        }
         src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png"
         alt="리액트 로고"
       />
