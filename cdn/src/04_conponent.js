@@ -27,15 +27,12 @@
 
       가. 컴포넌트 이름의 첫 글자는 대문자로 쓴다.
       나. return 키워드 필수!
-      다. JSX의 태그 끝에는 ; 을 쓰지 않는다.
-      라. JSX 문장은 "" 묶으면 안된다.
-      마. JSX 문장이 한 문장일 경우 (); 생략 가능
 */
 // 클래스형 컴포넌트
 // extends는 상속
 // Car의 부모 컴포넌트는 React.Component 이다.
 // 클래스형 컴포넌트를 사용하려면 반드시 React.Component를 상속(extends)받아, 사용자 클래스 컴포넌트인 Car 컴포넌트를 생성한다.
-class Car extends React.Component {
+class Comp1 extends React.Component {
     // render 메서드 내에
     render() {
         // 시작 값으로 return
@@ -45,7 +42,7 @@ class Car extends React.Component {
 
 // 함수형 컴포넌트
 // 함수형 컴포넌트는 상속(extends)"받지 않고!" "render() {}" 이 필요가 없다.
-function Car() {
+function Comp2() {
     return <h2>나는 함수형 컴포넌트!</h2>;
 }
 
@@ -91,3 +88,18 @@ function Hello() {
 //     </div>
 //   );
 // }
+
+// 리액트 출력하기
+// HTML DOM 요소 가져오기
+const container0 = document.querySelectorAll(".item").item(0);
+// 리액트 가상돔 요소 생성
+const root0 = ReactDOM.createRoot(container0);
+// 컴포넌트는 XML 빈 요소로 호출한다. (<태그 />) <- 이때 태그의 이름은 컴포넌트 이름으로 한다.
+root0.render(<Comp1 />);
+
+// HTML DOM 요소 가져오기
+const container1 = document.querySelectorAll(".item").item(1);
+// 리액트 가상돔 요소 생성
+const root1 = ReactDOM.createRoot(container1);
+// 컴포넌트는 XML 빈 요소로 호출한다. (<태그 />) <- 이때 태그의 이름은 컴포넌트 이름으로 한다.
+root1.render(<Comp2 />);
