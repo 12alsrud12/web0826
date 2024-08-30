@@ -12,6 +12,7 @@
                         예) 아래 메가박스 UI card를 내보낼때
                                 - 내보내기: export default hello;
                                 - 불러오기: import { hello } from "04_conponent.js";
+                            이렇게 쉽게 할...수 있나 ???
 
         종류
             1. 클래스형 컴포넌트 -> Hooks 지원 X
@@ -32,19 +33,20 @@
 */
 // 클래스형 컴포넌트
 // extends는 상속
-// Car의 부모는 React.Component 이다.
+// Car의 부모 컴포넌트는 React.Component 이다.
+// 클래스형 컴포넌트를 사용하려면 반드시 React.Component를 상속(extends)받아, 사용자 클래스 컴포넌트인 Car 컴포넌트를 생성한다.
 class Car extends React.Component {
+    // render 메서드 내에
     render() {
-        return <h2>Hi, I am a Car!</h2>;
-    }
+        // 시작 값으로 return
+        return <h2>나는 클래스 컴포넌트!</h2>;
+    } // <- 여기까지가 render 이다!
 }
 
 // 함수형 컴포넌트
-// extends는 상속
-class Car extends React.Component {
-    render() {
-        return <h2>Hi, I am a Car!</h2>;
-    }
+// 함수형 컴포넌트는 상속(extends)"받지 않고!" "render() {}" 이 필요가 없다.
+function Car() {
+    return <h2>나는 함수형 컴포넌트!</h2>;
 }
 
 // 컴포넌트 생성
