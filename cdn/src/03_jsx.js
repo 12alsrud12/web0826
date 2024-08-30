@@ -7,6 +7,8 @@
 
     1. JSX {표현식} - { 표현식 } 안에 React 변수, 속성, JS 표현식을 사용한다.
         - 표현식: 변수, 속성, JS표현식(연산 등)
+          (1) 인라인 스타일
+                - style={{속성: "값"}}
     2. 최상위 요소는 반드시 한 개여야 한다 (두 줄 부터는 하나의 최상위 요소로 감싸주어야한다.)
         - HTML 태그
         - <React.Fragment></React.Fragment>
@@ -53,21 +55,37 @@ function MyFunction() {
       {/* 요기 안부터는 드디어 JSX 영역이구나! */}
       <h2>나는 함수 안의 JSX이다.</h2>
       <p>JSX는 두 개의 부모 태그를 가지면 안되고 반드시! 하나의 부모만 있어야 한다.</p>
-      <img src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png" alt="리액트 로고" />
+      {/* 그리고 React에서는 안쓰는 편이 비교적 좋기는 하지만 HTML과는 다르게 이렇게 인라인 CSS 를 사용해도 된다고 한다. */}
+      {/* JSX 인라인 스타일 -> style={{속성: "값"}} */}
+      <img style={{ border: "1px solid red" }} src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png" alt="리액트 로고" />
     </React.Fragment>
   );
-
+  // 인라인 CSS란? HTML태그에 즉발로 style을 적용하는 방식
 }
 
+/* 
+    리액트의 출력
+      1. 첫 번째 방법 
+        ReactDOM.render(element, container); 
+
+        (1) ReactDOM은 가상 DOM을 생성하는 객체
+        (2) render()은 element를 container에 넣는 메서드
+        (3) element는 변수명으로 쓴다.
+        (4) container는 HTML 페이지의 div#root를 말한다.
+
+      2. 두 번째 방법
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<p>Hello</p>);
+
+        (5) ReactDOM.createRoot()는 HTML 요소를 가져와서 새롭게 루트(root)를 생성한다.
+
+      우리는 복잡하더라도 두번째 방법을 써야한다고 한다.
+*/
 function Hello() {
-  // 리턴 뒤에 한 줄 문장
-  // return <h1>Hello World!</h1>
-  // 리턴 뒤에 두 줄 이상의 문장은 ( 이 안은 JSX! ); 로 묶고 문장 끝 ; 쓴다.
+
   return (
-    // JSX의 태그 끝에는 ; 쓰지 않는다.
-    // return 안의 root 태그는 1개 이어야 한다.
     <div className="card_list">
-      {/* XML에서 빈 요소는 끝에 <img /> */}
       <div className="card_img">
         <img
           src="https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg"
