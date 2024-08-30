@@ -1,0 +1,5 @@
+리액트 6일차
+
+1. 출력: render(), createRoot()
+2. JSX
+3. 컴포넌트
