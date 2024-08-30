@@ -1,37 +1,29 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>03_jsx</title>
-    <link rel="stylesheet" href="../src/03_jsx.css">
-
-    <!-- CDN방식 React 플러그인 -->
-    <!-- 반드시! 이 1, 2, 3 의 순서를 정확하게 맞춰서 가져와야 제대로 동작한다!!! -->
-    <!-- 1. 리액트 인터랙티브 UI 만들다. -->
+    <title>render</title>
+    <link rel="stylesheet" href="./../src/03_jsx.css">
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <!-- 2. 리액트 가상 DOM 요소를 가져다가 HTML DOM에 넣을 수 있도록 한다. -->
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <!-- 3. JSX 코드를 브라우저가 이해할 수 있는 형태로 변환한다. -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- 위 라이브러리 1 2 3 그 아래에! 사용자 script를 넣어야 한다! -->
-    <!-- 사용자 script -->
-    <script>
-        /*
-            React의 목표는 여러 면에서 웹 페이지에서 HTML을 렌더링하는 것입니다.
-            createRoot()React는 . 이라는 함수 와 그 메서드를 사용하여 HTML을 웹 페이지에 렌더링합니다 render()
-        */
-        //  createRoot 함수
-    </script>
-    <script src="./../src/03_jsx.js"></script>
+    <!-- 사용자 스크립트는 항상 라이브러리보다 아래 기록한다. -->
+    <!-- type="text/babel" -> JSX코드 인식 -->
+    <!-- 확장자는 .jsx 또는 .js -->
+    <script src="./../src/03_jsx.js" type="text/babel"></script>
+
 </head>
 
 <body>
+    <!-- 리액트의 표준 관례로 보통 #root를 사용한다. -->
     <div id="root">
-        <div class="item"></div>
-        <div class="item"></div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
     </div>
 </body>
 
