@@ -55,6 +55,7 @@ function MyFunction() {
       {/* 요기 안부터는 드디어 JSX 영역이구나! */}
       <h2>나는 함수 안의 JSX이다.</h2>
       <p>JSX는 두 개의 부모 태그를 가지면 안되고 반드시! 하나의 부모만 있어야 한다.</p>
+      <p className="tomato">JSX는 두 개의 부모 태그를 가지면 안되고 반드시! 하나의 부모만 있어야 한다.</p>
       {/* 그리고 React에서는 안쓰는 편이 비교적 좋기는 하지만 HTML과는 다르게 이렇게 인라인 CSS 를 사용해도 된다고 한다. */}
       {/* JSX 인라인 스타일 -> style={{속성: "값"}} */}
       <img style={{ border: "1px solid red" }} src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png" alt="리액트 로고" />

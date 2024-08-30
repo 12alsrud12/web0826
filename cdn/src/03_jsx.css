@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-h1 {
+h2 {
     color: orange;
 }
 
-h2 {
+.tomato {
     color: tomato;
 }
