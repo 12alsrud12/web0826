@@ -2,17 +2,23 @@
 // 리액트 컴포넌트 생성!
 function UiCard() {
     return (
+        <div className="ui-card">
+            <div className="ui-img">
+            </div>
+            <div className="ui-bx">
 
-    )
+            </div>
+        </div>
+    );
 }
 
 // 출력
 ReactDOM.render(
-    <div className="ui">
+    <div className="ui-card-list">
         <UiCard />
         <UiCard />
         <UiCard />
         <UiCard />
     </div>,
-    document.querySelector("#ui-wrap")
+    document.querySelector("#ui-card")
 );
