@@ -2,14 +2,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 /* reset */
-body {
+body,
+h4,
+h5,
+h6,
+p {
     margin: 0;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+/* typo */
+body {
     font-family: "Noto Sans KR", sans-serif;
+    line-height: 1.5;
+}
+
+h5 {
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+h6 {
+    margin-top: 16px;
+}
+
+span,
+h6 {
+    color: #878787;
+}
+
+p::before {
+    content: "★";
+    color: #fff000;
+    margin-right: 4px;
+}
+
+span {
+    margin-left: 4px;
 }
 
 /* 공통 */
+.ui-card-list {
+    width: 1160px;
+    display: flex;
+    margin: 0 auto;
+}
 
-/* 카드 이미지 */
-div.ui-card:first-of-type div.ui-img {
-    background: url();
+.ui-card {
+    width: 282px;
+    height: 316px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ui-card:not(:last-of-type) {
+    margin-right: 8px;
+}
+
+.ui-img {
+    width: 282px;
+    height: 175px;
 }
