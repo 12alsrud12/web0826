@@ -16,13 +16,61 @@ function UiCard1() {
     );
 }
 
+function UiCard2() {
+    return (
+        <div className="ui-card">
+            <div className="ui-img">
+                <img src="../images/ui-card-img2.svg" alt="ui_카드_이미지2" />
+            </div>
+            <div className="ui-bx">
+                <h4>가평 체리쉬애견팬션</h4>
+                <p>0<span>(0)</span></p>
+                <h6>경기 가평군 · ~20kg · 소형견 · 중형견 · 애견수영장</h6>
+                <h5>39,000원</h5>
+            </div>
+        </div>
+    );
+}
+
+function UiCard3() {
+    return (
+        <div className="ui-card">
+            <div className="ui-img">
+                <img src="../images/ui-card-img3.svg" alt="ui_카드_이미지3" />
+            </div>
+            <div className="ui-bx">
+                <h4>도그팰리스 프리미엄 독채 글램핑</h4>
+                <p>5<span>(13)</span></p>
+                <h6>충남 당진시 · 모든견종 ·맹견가능 · 드라이룸</h6>
+                <h5>205,000원</h5>
+            </div>
+        </div>
+    );
+}
+
+function UiCard4() {
+    return (
+        <div className="ui-card">
+            <div className="ui-img">
+                <img src="../images/ui-card-img4.svg" alt="ui_카드_이미지4" />
+            </div>
+            <div className="ui-bx">
+                <h4>경주 마법의성 애견펜션</h4>
+                <p>4.9<span>(19)</span></p>
+                <h6>경북 경주시 · ~10kg · 소형견 · 애견수영장 · 애견놀이터</h6>
+                <h5>70,000원</h5>
+            </div>
+        </div>
+    );
+}
+
 // 출력
 ReactDOM.render(
     <div className="ui-card-list">
         <UiCard1 />
-        <UiCard1 />
-        <UiCard1 />
-        <UiCard1 />
+        <UiCard2 />
+        <UiCard3 />
+        <UiCard4 />
     </div>,
     document.querySelector("#ui")
 )
