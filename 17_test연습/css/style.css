@@ -7,6 +7,9 @@ body {
     font-family: "Noto Sans KR", sans-serif;
 }
 
+/* 공통 */
+
+/* 카드 이미지 */
 div.ui-card:first-of-type div.ui-img {
     background: url();
 }

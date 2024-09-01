@@ -21,8 +21,4 @@ ReactDOM.render(
         <UiCard />
     </div>,
     document.querySelector("#ui-card")
-);
-
-const uiImgList1 {
-    uiImgList1.
-}
+)
