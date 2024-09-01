@@ -22,3 +22,7 @@ ReactDOM.render(
     </div>,
     document.querySelector("#ui-card")
 );
+
+const uiImgList1 {
+    uiImgList1.
+}
