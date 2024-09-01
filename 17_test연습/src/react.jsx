@@ -4,7 +4,7 @@ function UiCard1() {
     return (
         <div className="ui-card">
             <div className="ui-img">
-                <img src="../images/ui-card-img1.svg" alt="ui_카드_이미지1" />
+                <img src="https://raw.githubusercontent.com/12alsrud12/web0826/445e06bfbd1f464ce7a60ee3210644af5fd6f4ce/17_test%EC%97%B0%EC%8A%B5/images/ui-card-img1.svg" alt="ui_카드_이미지1" />
             </div>
             <div className="ui-bx">
                 <h4>라온</h4>
@@ -20,7 +20,7 @@ function UiCard2() {
     return (
         <div className="ui-card">
             <div className="ui-img">
-                <img src="../images/ui-card-img2.svg" alt="ui_카드_이미지2" />
+                <img src="https://raw.githubusercontent.com/12alsrud12/web0826/445e06bfbd1f464ce7a60ee3210644af5fd6f4ce/17_test%EC%97%B0%EC%8A%B5/images/ui-card-img2.svg" alt="ui_카드_이미지2" />
             </div>
             <div className="ui-bx">
                 <h4>가평 체리쉬애견팬션</h4>
@@ -36,7 +36,7 @@ function UiCard3() {
     return (
         <div className="ui-card">
             <div className="ui-img">
-                <img src="../images/ui-card-img3.svg" alt="ui_카드_이미지3" />
+                <img src="https://raw.githubusercontent.com/12alsrud12/web0826/445e06bfbd1f464ce7a60ee3210644af5fd6f4ce/17_test%EC%97%B0%EC%8A%B5/images/ui-card-img3.svg" alt="ui_카드_이미지3" />
             </div>
             <div className="ui-bx">
                 <h4>도그팰리스 프리미엄 독채 글램핑</h4>
@@ -52,7 +52,7 @@ function UiCard4() {
     return (
         <div className="ui-card">
             <div className="ui-img">
-                <img src="../images/ui-card-img4.svg" alt="ui_카드_이미지4" />
+                <img src="https://raw.githubusercontent.com/12alsrud12/web0826/445e06bfbd1f464ce7a60ee3210644af5fd6f4ce/17_test%EC%97%B0%EC%8A%B5/images/ui-card-img4.svg" alt="ui_카드_이미지4" />
             </div>
             <div className="ui-bx">
                 <h4>경주 마법의성 애견펜션</h4>

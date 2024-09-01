@@ -22,6 +22,10 @@ body {
     line-height: 1.5;
 }
 
+h4 {
+    line-height: 2;
+}
+
 h5 {
     margin-top: 16px;
     font-size: 18px;
@@ -46,7 +50,25 @@ span {
     margin-left: 4px;
 }
 
+body>p {
+    height: 50px;
+    letter-spacing: 2px;
+}
+
+a {
+    color: #272727;
+}
+
 /* 공통 */
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+}
+
 .ui-card-list {
     width: 1160px;
     display: flex;
@@ -56,9 +78,10 @@ span {
 .ui-card {
     width: 282px;
     height: 316px;
-    border-radius: 20px;
+    border-radius: 10px;
     background: #fff;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 4px rgba(87, 87, 87, 0.5);
+    overflow: hidden;
 }
 
 .ui-card:not(:last-of-type) {
@@ -68,4 +91,8 @@ span {
 .ui-img {
     width: 282px;
     height: 175px;
+}
+
+.ui-bx {
+    padding: 0 8px;
 }
